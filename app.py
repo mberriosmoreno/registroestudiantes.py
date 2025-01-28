@@ -1,9 +1,5 @@
 import streamlit as st
 
-# Menú lateral
-st.sidebar.title("Menú")
-st.sidebar.markdown("Selecciona la operación que deseas realizar:")
-
 # Configuración de la página
 st.set_page_config(
     page_title="Gestión de Estudiantes",
@@ -16,3 +12,6 @@ st.set_page_config(
 st.title("🏫 Gestión de Estudiantes")
 st.markdown("Bienvenido a la aplicación de gestión de estudiantes. Selecciona una opción del menú lateral.")
 
+# Menú lateral
+st.sidebar.title("Menú")
+st.sidebar.markdown("Selecciona la operación que deseas realizar:")
