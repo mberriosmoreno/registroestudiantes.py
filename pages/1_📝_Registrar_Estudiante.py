@@ -22,9 +22,11 @@ with st.form("registrar_estudiante"):
         else:
             df = pd.DataFrame(columns=["Nombre", "Edad", "Grado"])
 
-        # Agregar el nuevo estudiante
-        nuevo_estudiante = {"Nombre": nombre, "Edad": edad, "Grado": grado}
-        df = df.append(nuevo_estudiante, ignore_index=True)
+        # Crear un DataFrame con el nuevo estudiante
+        nuevo_estudiante = pd.DataFrame({"Nombre": [nombre], "Edad": [edad], "Grado": [grado]})
+
+        # Agregar el nuevo estudiante usando pd.concat
+        df = pd.concat([df, nuevo_estudiante], ignore_index=True)
 
         # Guardar el archivo
         df.to_excel(DATA_PATH, index=False)
